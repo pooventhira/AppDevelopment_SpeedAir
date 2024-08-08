@@ -1,0 +1,61 @@
+.sidebar {
+  width: 22%;
+  height: 100vh; /* Full height */
+  background-color: var(--color-grey-tint5);
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: inherit;
+  overflow-y: auto; /* Enable vertical scrolling */
+  position: fixed; /* Fix the sidebar to the left */
+}
+
+.logo {
+  font-size: 2.5em;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--color-grey-tint3);
+  cursor: pointer;
+}
+.logo span {
+  color: var(--color-grey-tint1);
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 25px;
+  color: var(--color-white);
+  background-color: var(--color-primary-tint1);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.menu-item:hover {
+  background-color: var(--color-primary-shade1);
+}
+
+.menu-item span {
+  margin-left: 10px;
+}
+
+.menu-item svg {
+  font-size: 20px;
+}
+
+/* Optional: Customize the scrollbar */
+.sidebar::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #b0b0b0; /* Color of the scrollbar thumb */
+  border-radius: 4px; /* Rounded corners for the thumb */
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background-color: #888; /* Color when hovering */
+}

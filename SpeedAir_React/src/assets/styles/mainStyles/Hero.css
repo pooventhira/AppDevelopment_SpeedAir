@@ -1,0 +1,86 @@
+.hero {
+  margin: 4% 4.5%;
+  aspect-ratio: 1/.45;
+  background: radial-gradient(
+    30% 45% at
+    75% 50%,
+    var(--color-primary-tint3) 0%,
+    var(--color-primary-tint2) 50%,
+    var(--color-primary-tint1)
+  );
+  border-radius: 15px;
+
+  display: flex;
+  align-items: center;
+}
+
+.hero-left {
+  width: 50%;
+  color: var(--color-white);
+  font-weight: 700;
+}
+
+.welcome {
+  font-size: 5em;
+  margin-bottom: 5%;
+}
+
+.text {
+  font-size: 2.5em;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10%;
+  padding: 0 15%;
+}
+.buttons button {
+  font-family: inherit;
+  font-size: 1.25em;
+  font-weight: 700;
+  color: var(--color-white);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--color-grey);
+  transition: background-color 0.3s;
+}
+.buttons button:hover {
+  color: var(--color-black);
+  background-color: var(--color-primary-tint3);
+}
+
+.hero-right {
+  width: 50%;
+  height: 100%;
+  position: relative;
+}
+.hero-right img {
+  width: 100%;
+}
+
+.image1 {
+  width: 60%;
+
+  position: absolute;
+  left: 5%;
+  top: 20%;
+}
+.image1 img {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.image2 {
+  width: 60%;
+  
+  position: absolute;
+  left: 30%;
+  top: 30%;
+}
+.image2 img {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}

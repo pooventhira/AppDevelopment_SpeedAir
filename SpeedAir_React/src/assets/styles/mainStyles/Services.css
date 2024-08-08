@@ -1,0 +1,67 @@
+.services {
+  color: var(--color-black);
+  font-family: inherit;
+  border-radius: 15px;
+  margin: 4% 4.5%;
+  padding: 4%;
+  box-shadow: 1px 1px 5px 3px var(--color-grey-tint3);
+}
+
+.location {
+  margin-bottom: 2%;
+  display: flex;
+  text-align: start;
+  align-items: center;
+  font-size: 1.5em;
+}
+.location select {
+  font-size: 1em;
+  font-family: inherit;
+  font-weight: 600;
+  border: none;
+  white-space-collapse: break-spaces;
+  outline: none;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  padding: 0% 4%;
+}
+.container div {
+  width: 13%;
+  cursor: pointer;
+}
+.container div img {
+  width: 100%;
+  border-radius: 8%;
+  background-color: var(--color-primary-tint4);
+}
+.container p {
+  /* text-align: start; */
+  margin-top: 8%;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.container .services-button {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border-radius: 12px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.container .services-button h3{
+  /* text-align: start; */
+  font-size: 2em;
+}
+.container .services-button p{
+  font-size: 1em;
+  font-weight: normal;
+}
+.container .services-button span{
+  font-size: 2.5em;
+  text-align: left;
+  padding: 0 8%;
+}
