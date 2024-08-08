@@ -1,0 +1,49 @@
+.our-offices {
+  background: radial-gradient(
+    30% 30% at
+    105% 50%,
+    hsl(220, 100%, 15%),
+    hsl(220, 100%, 3%)
+  );
+  color: var(--color-white);
+  padding: 4% 4% 10% 4%;
+  font-family: inherit;
+}
+
+.our-offices h1 {
+  font-size: 2.5em;
+  margin-bottom: 4%;
+}
+
+.offices {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.office {
+  text-align: left;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.office h2 {
+  font-size: 1.7em;
+  margin-bottom: 10px;
+}
+
+.office p {
+  font-size: 1.25em;
+  margin-bottom: 10px;
+}
+
+.office a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: bold;
+}
+.office a:hover {
+  text-decoration: underline;
+}

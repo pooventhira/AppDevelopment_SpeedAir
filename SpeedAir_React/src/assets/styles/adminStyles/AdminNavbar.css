@@ -1,0 +1,26 @@
+.admin-navbar {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 20px;
+  margin: 0;
+  background-color: var(--color-grey-tint4);
+  color: var(--color-black);
+  position: fixed;
+  width: 78%; /* Full width minus sidebar width */
+  top: 0;
+  left: 22%; /* Positioning the admin-navbar alongside the sidebar */
+  z-index: 10; /* Ensure the admin-navbar is on top */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+  margin-left: 20px;
+  font-size: 2em;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.icon:hover {
+  color: var(--color-grey);
+}

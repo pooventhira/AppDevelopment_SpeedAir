@@ -1,0 +1,69 @@
+.help-center {
+  background: radial-gradient(
+    30% 45% at
+    -5% 40%,
+    hsl(220, 80%, 15%),
+    hsl(220, 100%, 3%)
+  );
+  color: var(--color-white);
+  padding: 4%;
+  font-family: inherit;
+}
+
+.help-center .heading {
+  margin-bottom: 4em;
+}
+
+.help-center h1 {
+  font-size: 2.5em;
+  margin-bottom: 2%;
+}
+
+.help-center p {
+  font-size: 1.3em;
+}
+
+.help-sections {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.help-section {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  padding: 3%;
+  max-width: 40%;
+  text-align: left;
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.help-section .section-1 {
+  width: 30%;
+}
+
+.help-section .section-2 {
+  width: 70%;
+}
+
+.help-section img {
+  width: 70%;
+}
+
+.help-section h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.help-section a {
+  color: var(--color-primary-tint1);
+  text-decoration: none;
+}
+.help-section a:hover {
+  text-decoration: underline;
+}

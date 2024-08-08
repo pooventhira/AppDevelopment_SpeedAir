@@ -1,0 +1,24 @@
+.our-clients {
+  padding: 40px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.our-clients h2 {
+  margin-bottom: 40px;
+  font-size: 24px;
+  color: #333;
+}
+
+.clients-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.client-logo img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}

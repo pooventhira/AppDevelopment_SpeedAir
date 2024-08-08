@@ -1,0 +1,27 @@
+.admin-section {
+  padding-top: 8%;
+  padding-left: 22%;
+}
+
+.admin-section img {
+  width: 80%;
+}
+
+.supplier-management {
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f4f4f4;
+}

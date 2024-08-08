@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --color-primary-tint4: #ccddff;
+  --color-primary-tint3: #99bbff;
+  --color-primary-tint2: #6699ff;
+  --color-primary-tint1: #3377ff;
+  --color-primary: #0055ff;
+  --color-primary-shade1: #0044cc;
+  --color-primary-shade2: #003399;
+  --color-primary-shade3: #002266;
+  --color-primary-shade4: #001133;
+
+  --color-grey-tint5: #f2f2f2;
+  --color-grey-tint4: #e6e6e6;
+  --color-grey-tint3: #cccccc;
+  --color-grey-tint2: #b3b3b3;
+  --color-grey-tint1: #999999;
+  --color-grey: #808080;
+  --color-grey-shade1: #666666;
+  --color-grey-shade2: #4d4d4d;
+  --color-grey-shade3: #333333;
+  --color-grey-shade4: #1a1a1a;
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Raleway";
+  font-size: 1vw;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: greyscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
