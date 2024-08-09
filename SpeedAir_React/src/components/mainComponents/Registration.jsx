@@ -5,36 +5,27 @@ function Registration() {
   return (
     <section className="registration">
       <div className="registration-container">
-        <h1 className="registration-title">Welcome to your <span className="brand-name">Speed<span>Air</span></span> Registration</h1>
-        <p className="registration-info">Previous customers of SpeedAir can <a href="#login">Sign in</a> immediately to SpeedAir. Please note that you may be asked for some further information to identify which region should serve you.</p>
         <form className="registration-form">
+          <h3 className="registration-title">Join Now</h3>
           <div className="form-group">
-            <label>Name</label>
-            <input type="text" placeholder="Enter your full name" required />
+            {/* <label>Name</label> */}
+            <input type="text" placeholder="Name" required />
           </div>
           <div className="form-group">
-            <label>Company Name</label>
-            <input type="text" placeholder="Enter company name" required />
+            {/* <label>Company Name</label> */}
+            <input type="text" placeholder="Company Name" required />
           </div>
           <div className="form-group">
-            <label>Business Email</label>
-            <input type="email" placeholder="Enter business email address" required />
+            {/* <label>Company Address</label> */}
+            <input type="text" placeholder="Company Address" required />
           </div>
           <div className="form-group">
-            <label>Company Address</label>
-            <input type="text" placeholder="Enter company address" required />
+            {/* <label>Email</label> */}
+            <input type="email" placeholder="Email" required />
           </div>
           <div className="form-group">
-            <label>Region</label>
-            <input type="text" placeholder="Enter company region" required />
-          </div>
-          <div className="form-group">
-            <label>Business contact number</label>
-            <input type="tel" placeholder="000 Enter mobile number" required />
-          </div>
-          <div className="form-group">
-            <label>Landline number</label>
-            <input type="tel" placeholder="000 Enter landline number" />
+            {/* <label>Contact</label> */}
+            <input type="text" placeholder="Contact" required />
           </div>
           <div className="form-group check-box">
             <p>
@@ -47,11 +38,6 @@ function Registration() {
               or similar means specified in <a href="#terms">our terms</a>.
             </p>
           </div>
-          <p className="terms-info">
-            By registering as a new user, you accept without restriction the user terms incorporating general
-            user terms, registered user terms, and business notifications, and you will be granted access to our
-            online business services.
-          </p>
           <button type="submit" className="submit-button">Submit</button>
         </form>
       </div>

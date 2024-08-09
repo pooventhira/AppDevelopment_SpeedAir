@@ -1,0 +1,14 @@
+.enterprise-landing {
+  width: 100%;
+  aspect-ratio: 1/.45;
+  background-image: url("../../../assets/images/mainImages/EnterpriseLandingBackground.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  text-align: right;
+  padding: 5%;
+}
+
+.enterprise-landing div {
+  display: inline-block;
+  border-radius: 5%;
+}

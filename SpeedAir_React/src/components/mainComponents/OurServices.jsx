@@ -4,7 +4,6 @@ import Payment from '../../assets/images/mainImages/WhySpeedAir_Payment.png';
 import Accounting from '../../assets/images/mainImages/WhySpeedAir_Accounting.png';
 import ShipmentControl from '../../assets/images/mainImages/WhySpeedAir_ShipmentControl.png';
 import FastDelivery from '../../assets/images/mainImages/WhySpeedAir_FastDelivery.png';
-
 const services = [
   {
     title: "Pay Per Use",

@@ -1,13 +1,14 @@
 .our-clients {
-  padding: 40px;
+  padding: 4%;
   text-align: center;
-  background-color: #fff;
+  background-color: var(--color-white);
+  font-family: inherit;
 }
 
 .our-clients h2 {
-  margin-bottom: 40px;
-  font-size: 24px;
-  color: #333;
+  margin-bottom: 5%;
+  font-size: 35px;
+  color: var(--color-black);
 }
 
 .clients-grid {
@@ -18,7 +19,7 @@
 }
 
 .client-logo img {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  aspect-ratio: 1/1;
   object-fit: contain;
 }

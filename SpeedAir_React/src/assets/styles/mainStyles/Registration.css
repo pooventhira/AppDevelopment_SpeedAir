@@ -1,16 +1,20 @@
 .registration-container {
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 450px;
   padding: 20px;
   font-family: inherit;
   text-align: left;
-  /* background-color: var(--color-grey-tint4); */
+  background-color: var(--color-grey-tint4);
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
 }
 
 .registration-title {
   font-size: 3em;
-  margin-bottom: 10px;
-  /* text-align: center; */
+  margin: 10px 0;
+  text-align: center;
 }
 
 .brand-name {
@@ -19,22 +23,6 @@
 }
 .brand-name span {
   color: var(--color-grey-tint1);
-}
-
-.registration-info {
-  margin-bottom: 20px;
-  color: #555;
-}
-
-.registration-info a {
-  color: var(--color-primary);
-  text-decoration: none;
-}
-
-.registration-form {
-  display: flex;
-  flex-direction: column;
-  margin-top: 10%;
 }
 
 .form-group {
@@ -70,7 +58,7 @@
 .submit-button {
   width: 100%;
   padding: 10px;
-  background-color: #333;
+  background-color: var(--color-primary);
   color: #fff;
   border: none;
   border-radius: 4px;
