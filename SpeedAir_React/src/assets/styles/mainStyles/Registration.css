@@ -3,26 +3,14 @@
   padding: 20px;
   font-family: inherit;
   text-align: left;
-  background-color: var(--color-grey-tint4);
-}
-
-.registration-form {
-  display: flex;
-  flex-direction: column;
+  background-color: var(--color-grey-tint5);
+  border-radius: 5%;
 }
 
 .registration-title {
-  font-size: 3em;
-  margin: 10px 0;
+  font-size: 30px;
+  margin: 5% 0;
   text-align: center;
-}
-
-.brand-name {
-  color: var(--color-primary);
-  font-size: 1.5em;
-}
-.brand-name span {
-  color: var(--color-grey-tint1);
 }
 
 .form-group {
@@ -31,42 +19,28 @@
 
 .form-group label {
   display: block;
-  font-size: 1.5em;
+  font-size: 15px;
   margin-bottom: 2%;
-  font-weight: bold;
-}
-
-.check-box {
-  margin-top: 2%;
 }
 
 .form-group input[type="text"],
 .form-group input[type="email"],
-.form-group input[type="tel"],
-.form-group input[type="password"] {
+.form-group input[type="tel"] {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-grey-tint2);
   border-radius: 4px;
   font-size: 14px;
-}
-
-.form-group input[type="checkbox"] {
-  margin-right: 10px;
 }
 
 .submit-button {
   width: 100%;
   padding: 10px;
   background-color: var(--color-primary);
-  color: #fff;
+  color: var(--color-white);
   border: none;
   border-radius: 4px;
+  margin: 5% 0;
   font-size: 16px;
   cursor: pointer;
-}
-
-.terms-info {
-  margin: 10px 0;
-  color: #555;
 }

@@ -5,7 +5,7 @@ import Registration from '../../components/mainComponents/Registration';
 const EnterpriseLanding = () => {
   return (
     <section className="enterprise-landing">
-      <div>
+      <div className="enterprise-landing-form">
         <Registration/>
       </div>
     </section>

@@ -1,0 +1,115 @@
+.estimate-landing {
+  width: 100%;
+  font-family: inherit;
+  position: relative;
+  color: var(--color-white);
+}
+
+.estimate-landing-background {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  aspect-ratio: 1/.28;
+  overflow: hidden;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), 
+                    url('../../images/mainImages/EstimateBackground.jpg');
+  background-size: cover;
+}
+
+.estimate-landing-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.estimate-landing-title {
+  font-size: 2em;
+  margin-top: 2%;
+  margin-bottom: 15px;
+}
+
+.estimate-landing-subtitle {
+  font-size: 1rem;
+  margin-bottom: 13%;
+}
+
+.estimate-landing-box {
+  background-color: var(--color-grey-tint5);
+  color: var(--color-black);
+  border-radius: 15px;
+  padding: 3%;
+  box-shadow: 1px 1px 5px 3px var(--color-grey-tint1);
+}
+
+.estimate-landing-location {
+  margin-bottom: 3%;
+  display: flex;
+  text-align: start;
+  align-items: center;
+  font-size: 1.5em;
+}
+
+.estimate-landing-location select {
+  font-size: 1em;
+  font-family: inherit;
+  font-weight: 600;
+  border: none;
+  white-space-collapse: break-spaces;
+  outline: none;
+  background-color: var(--color-grey-tint5);
+}
+
+.estimate-landing-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.estimate-landing-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 10px;
+  align-content: center;
+}
+
+.estimate-landing-input-container label {
+  font-size: 1.2em;
+  margin-bottom: 3%;
+  font-weight: 500;
+}
+
+.estimate-landing-input-container label span {
+  color: red;
+  font-size: 1.5em;
+}
+
+.estimate-landing-input-container input {
+  padding: 8px;
+  border: 1px solid var(--color-grey-tint1);
+  border-radius: 5px;
+}
+
+.estimate-landing-check-price {
+  padding: 0 10px;
+}
+
+.estimate-landing-check-price button {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.5s;
+}
+
+.estimate-landing-check-price button:hover {
+  box-shadow: 0 0 10px 3px var(--color-grey-tint1);
+  scale: 1.05;
+  transition: 0.5s;
+}

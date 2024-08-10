@@ -9,7 +9,6 @@ const Header = () => {
           <Link className='nav-logo' to="/">Speed<span>Air</span></Link>
           <div className="nav-menu">
             <Link to="/ForEnterprise">For Enterprise</Link>
-            <Link to="/DeliveryPartners">Delivery Partners</Link>
             <Link to="/Support">Support</Link>
           </div>
           <Link to="/Login"><button className='login'>Login <span>|</span> Sign-Up</button></Link>

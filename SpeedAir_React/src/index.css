@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
+  --color-primary-tint5: #e5eeff;
   --color-primary-tint4: #ccddff;
   --color-primary-tint3: #99bbff;
   --color-primary-tint2: #6699ff;
@@ -25,6 +26,8 @@
 
   --color-white: #ffffff;
   --color-black: #000000;
+  --color-trasparent: #ffffff00;
+  --color-semitransparent: #ffffff25;
 }
 
 * {

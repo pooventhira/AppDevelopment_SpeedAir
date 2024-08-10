@@ -48,7 +48,7 @@ const FrequentlyAskedQuestions = () => {
             <div className="faq-question" onClick={() => toggleQuestion(index)}>
               {faq.question}
               <span className="faq-icon">
-                {activeIndex === index ? <i class="fa-solid fa-angle-down"></i> : <i class="fa-solid fa-angle-right"></i>}
+                {activeIndex === index ? <i className="fa-solid fa-angle-down"></i> : <i className="fa-solid fa-angle-right"></i>}
               </span>
             </div>
             {activeIndex === index && (
