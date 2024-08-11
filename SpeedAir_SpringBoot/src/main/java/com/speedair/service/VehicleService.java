@@ -14,23 +14,20 @@ public class VehicleService {
     @Autowired
     private VehicleRepository vehicleRepository;
 
+    // GetAll
+    public List<Vehicle> getAllVehicles() {
+        return vehicleRepository.findAll();
+    }
+    // GetById
     public Vehicle getVehicleById(Long vehicleId) {
         return vehicleRepository.findById(vehicleId).orElse(null);
     }
-
-    public Vehicle getVehicleByVehicleNo(String vehicleNo) {
-        return vehicleRepository.findByVehicleNo(vehicleNo);
-    }
-
+    // Post
     public Vehicle saveVehicle(Vehicle vehicle) {
         return vehicleRepository.save(vehicle);
     }
-
+    // Delete
     public void deleteVehicle(Long vehicleId) {
         vehicleRepository.deleteById(vehicleId);
-    }
-
-    public List<Vehicle> getAllVehicles() {
-        return vehicleRepository.findAll();
     }
 }

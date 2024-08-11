@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-SpeedairApplication<speedair>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.speedair.SpeedairApplication",
+      "projectName": "speedair",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}

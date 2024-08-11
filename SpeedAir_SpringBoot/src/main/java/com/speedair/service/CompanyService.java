@@ -14,18 +14,19 @@ public class CompanyService {
     @Autowired
     private CompanyRepository companyRepository;
 
+    // GetAll
     public List<Company> getAllCompanies() {
         return companyRepository.findAll();
     }
-
+    // GetById
     public Company getCompanyById(Long companyId) {
         return companyRepository.findById(companyId).orElse(null);
     }
-
+    // Post
     public Company saveCompany(Company company) {
         return companyRepository.save(company);
     }
-
+    // Delete
     public void deleteCompany(Long companyId) {
         companyRepository.deleteById(companyId);
     }

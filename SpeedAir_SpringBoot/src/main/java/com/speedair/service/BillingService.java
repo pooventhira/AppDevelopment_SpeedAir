@@ -14,18 +14,19 @@ public class BillingService {
     @Autowired
     private BillingRepository billingRepository;
 
+    // GetAll
     public List<Billing> getAllBillings() {
         return billingRepository.findAll();
     }
-
+    // GetById
     public Billing getBillingById(Long billId) {
         return billingRepository.findById(billId).orElse(null);
     }
-
+    // Post
     public Billing saveBilling(Billing billing) {
         return billingRepository.save(billing);
     }
-
+    // Delete
     public void deleteBilling(Long billId) {
         billingRepository.deleteById(billId);
     }

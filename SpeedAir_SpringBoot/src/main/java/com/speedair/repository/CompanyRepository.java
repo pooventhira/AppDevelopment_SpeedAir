@@ -7,4 +7,5 @@ import com.speedair.model.Company;
 
 @Repository
 public interface CompanyRepository extends JpaRepository<Company, Long> {
+  Company findByName(String name);
 }

@@ -8,9 +8,9 @@ import ServicesIndia from "../../assets/images/mainImages/ServicesIndia.png";
 
 const Services = () => {
 
-  const history = useNavigate();
+  const navigate = useNavigate();
   const navigateToEstimate = () => {
-    history('/Estimate');
+    navigate('/Estimate');
   }
 
   return (

@@ -15,8 +15,8 @@ function LoginSignup() {
           <h1 className="auth-title">Log<span>In</span></h1>
           <form className="auth-form">
             <div className="input-group">
-              <span className="input-icon">👤</span>
-              <input type="text" placeholder="Username" className="auth-input" />
+              <span className="input-icon">✉️</span>
+              <input type="emial" placeholder="Email" className="auth-input" />
             </div>
             <div className="input-group">
               <span className="input-icon">🔑</span>

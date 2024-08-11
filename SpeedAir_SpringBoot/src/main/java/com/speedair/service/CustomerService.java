@@ -13,18 +13,19 @@ public class CustomerService {
     @Autowired
     private CustomerRepository customerRepository;
 
+    // GetAll
     public List<Customer> getAllCustomers() {
         return customerRepository.findAll();
     }
-
+    // GetById
     public Customer getCustomerById(Long billId) {
         return customerRepository.findById(billId).orElse(null);
     }
-
+    // Post
     public Customer saveCustomer(Customer customer) {
         return customerRepository.save(customer);
     }
-
+    // Delete
     public void deleteCustomer(Long billId) {
         customerRepository.deleteById(billId);
     }
