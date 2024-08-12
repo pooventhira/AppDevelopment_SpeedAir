@@ -26,14 +26,12 @@ public class AuthUser implements UserDetails {
     private String name;
     private String email;
     private String password;
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
     @JsonBackReference
     @OneToMany(mappedBy = "authUser", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Token> tokens;
-
-    @Enumerated(EnumType.STRING)
-    private Role role;
-
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
