@@ -1,13 +1,17 @@
 import React from 'react';
-import '../../styles/adminStyles/AdminUserManagement.css';
-import BackImage from '../../images/UnderConstruction.webp'
+import './AdminUserManagement.css';
+import AdminSidebar from '../../components/adminComponents/AdminSidebar';
+import AdminNavbar from '../../components/adminComponents/AdminNavbar';
+import UserManagementList from '../../components/adminComponents/CustomerManagementList';
 
 
 const AdminUserManagement = () => {
   return (
-    <section className='admin-section'>
-      <img src={BackImage} alt=''/>
-    </section>
+    <main>
+      <AdminSidebar/>
+      <AdminNavbar/>
+      <UserManagementList/>
+    </main>
   );
 };
 

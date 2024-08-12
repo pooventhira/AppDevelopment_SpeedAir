@@ -1,12 +1,16 @@
 import React from 'react';
-import '../../styles/adminStyles/AdminInventoryManagement.css';
-import BackImage from '../../images/UnderConstruction.webp'
+import './AdminInventoryManagement.css';
+import AdminSidebar from '../../components/adminComponents/AdminSidebar';
+import AdminNavbar from '../../components/adminComponents/AdminNavbar';
+import InventoryManagementList from '../../components/adminComponents/InventoryManagementList';
 
 const AdminInventoryManagement = () => {
   return (
-    <section className='admin-section'>
-      <img src={BackImage} alt=''/>
-    </section>
+    <main>
+      <AdminSidebar/>
+      <AdminNavbar/>
+      <InventoryManagementList/>
+    </main>
   );
 };
 
