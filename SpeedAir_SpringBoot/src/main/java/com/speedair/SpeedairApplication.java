@@ -1,25 +1,19 @@
 package com.speedair;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import com.speedair.repository.CompanyRepository;
-import com.speedair.repository.DriverRepository;
-import com.speedair.repository.UserRepository;
-import com.speedair.repository.VehicleRepository;
 
 @SpringBootApplication
 public class SpeedairApplication {
 
-	@Autowired
-	private UserRepository userRepository;
-	@Autowired
-	private CompanyRepository companyRepository;
-	@Autowired
-	private DriverRepository driverRepository;
-	@Autowired
-	private VehicleRepository vehicleRepository;
+	// @Autowired
+	// private UserRepository userRepository;
+	// @Autowired
+	// private CompanyRepository companyRepository;
+	// @Autowired
+	// private DriverRepository driverRepository;
+	// @Autowired
+	// private VehicleRepository vehicleRepository;
 
 	// 
 
