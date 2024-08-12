@@ -1,12 +1,14 @@
 import React from 'react';
-import '../../styles/adminStyles/AdminBillingInvoicing.css';
-import BackImage from '../../images/UnderConstruction.webp';
+import './AdminBillingInvoicing.css';
+import AdminSidebar from '../../components/adminComponents/AdminSidebar';
+import AdminNavbar from '../../components/adminComponents/AdminNavbar';
 
 const AdminBillingInvoicing = () => {
   return (
-    <section className='admin-section'>
-      <img src={BackImage} alt=''/>
-    </section>
+    <main>
+      <AdminSidebar/>
+      <AdminNavbar/>
+    </main>
   );
 };
 
