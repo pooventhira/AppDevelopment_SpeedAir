@@ -18,6 +18,7 @@
   width: 50%;
   color: var(--color-white);
   font-weight: 700;
+  text-align: center;
 }
 
 .welcome {

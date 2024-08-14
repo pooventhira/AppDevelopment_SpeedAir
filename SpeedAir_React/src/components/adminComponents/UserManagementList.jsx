@@ -6,7 +6,7 @@ import "../../assets/styles/adminStyles/InventoryManagementList.css";
 const api = axios.create({
   baseURL: 'http://localhost:8080/api',
   headers: {
-    'Authorization': `Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMUBnbWFpbC5jb20iLCJpYXQiOjE3MjM0OTY0OTYsImV4cCI6MTcyMzU4Mjg5Nn0.h6Zb90kY0NG-VzSS1h31l7o_g_wYOIHUxJURSm0jBdM` // Adjust token storage mechanism as needed
+    'Authorization': `Bearer ${sessionStorage.getItem('authToken')}`
   }
 });
 

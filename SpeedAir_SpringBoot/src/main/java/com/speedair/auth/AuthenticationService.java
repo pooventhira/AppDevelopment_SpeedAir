@@ -17,7 +17,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class AuthenticationService {
 
-
     private final AuthUserRepo authUserRepo;
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
@@ -25,26 +24,24 @@ public class AuthenticationService {
     private final TokenRepo tokenRepo;
 
     public AuthenticationResponse register(RegisterRequest request) {
-        var authUser  = AuthUser.builder()
+        var authUser = AuthUser.builder()
                 .name(request.getName())
-                .email(request.getEmail()) 
+                .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(request.getRole())
                 .build();
         authUserRepo.save(authUser);
-        var jwtToken = jwtService.generateToken(authUser);
-        return AuthenticationResponse.builder()
-                .token(jwtToken)
-                .build();
+        jwtService.generateToken(authUser);
+        AuthenticationRequest authRequest = new AuthenticationRequest(request.getEmail(), request.getPassword());
+        return authenticate(authRequest);
+
     }
 
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         request.getEmail(),
-                        request.getPassword()
-                )
-        );
+                        request.getPassword()));
         var authUser = authUserRepo.findByEmail(request.getEmail()).orElseThrow();
         var jwtToken = jwtService.generateToken(authUser);
         revokeAllUserTokens(authUser);
@@ -77,6 +74,5 @@ public class AuthenticationService {
         var authUser = authUserRepo.findByEmail(username).orElseThrow();
         revokeAllUserTokens(authUser);
     }
-
 
 }
