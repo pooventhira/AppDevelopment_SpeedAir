@@ -11,7 +11,7 @@ const Header = () => {
             <Link to="/ForEnterprise">For Enterprise</Link>
             <Link to="/Support">Support</Link>
           </div>
-          <Link to="/Login"><button className='login'>Login <span>|</span> Sign-Up</button></Link>
+          <i className='fa-solid fa-user'></i>
         </nav>
       </header>
   );

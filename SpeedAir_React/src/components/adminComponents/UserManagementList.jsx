@@ -1,64 +1,54 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "../../assets/styles/adminStyles/InventoryManagementList.css";
 
-const UserManagementList = () => {
-  const [inventoryItems, setInventoryItems] = useState([
-    {
-      id: 1,
-      name: "Item 1",
-      email: "item1@example.com",
-      password: "password1",
-      address: "1, ram street, annur, chennai",
-      type: "Type A",
-      companyName: "Company A",
-      role: "Admin",
-    },
-    {
-      id: 2,
-      name: "Item 2",
-      email: "item2@example.com",
-      password: "password2",
-      address: "1, ram street, annur, chennai",
-      type: "Type B",
-      companyName: "Company B",
-      role: "User",
-    },
-    {
-      id: 3,
-      name: "Item 3",
-      email: "item3@example.com",
-      password: "password3",
-      address: "1, ram street, annur, chennai",
-      type: "Type C",
-      companyName: "Company C",
-      role: "Manager",
-    },
-  ]);
+// Create an Axios instance with JWT authentication
+const api = axios.create({
+  baseURL: 'http://localhost:8080/api',
+  headers: {
+    'Authorization': `Bearer ${sessionStorage.getItem('authToken')}`
+  }
+});
 
+const UserManagementList = () => {
+  const [userList, setUserList] = useState([]);
   const [isEditing, setIsEditing] = useState(null);
   const [newItem, setNewItem] = useState({
-    id: "",
+    userId: "",
     name: "",
     email: "",
     password: "",
+    contact: "",
     address: "",
     type: "",
     companyName: "",
     role: "",
   });
 
+  useEffect(() => {
+    // Fetch data from the API
+    api.get('/users')
+      .then(response => {
+        setUserList(response.data);
+      })
+      .catch(error => {
+        console.error("There was an error fetching the data!", error);
+      });
+  }, []);
+
   const handleAdd = () => {
     setNewItem({
-      id: "", // Generate a new ID
+      userId: "",
       name: "",
       email: "",
       password: "",
+      contact: "",
       address: "",
       type: "",
       companyName: "",
       role: "",
     });
-    setIsEditing("add"); // Indicate adding a new item
+    setIsEditing("add");
   };
 
   const handleChange = (e) => {
@@ -71,17 +61,32 @@ const UserManagementList = () => {
 
   const handleSave = () => {
     if (isEditing === "add") {
-      setInventoryItems((prevItems) => [...prevItems, newItem]);
+      // Add new item to the userList
+      api.post('/users', newItem)
+        .then(response => {
+          setUserList((prevItems) => [...prevItems, response.data]);
+        })
+        .catch(error => {
+          console.error("There was an error saving the new item!", error);
+        });
     } else {
-      setInventoryItems((prevItems) =>
-        prevItems.map((item) => (item.id === newItem.id ? newItem : item))
-      );
+      // Update existing item
+      api.put(`/users/${newItem.userId}`, newItem)
+        .then(response => {
+          setUserList((prevItems) =>
+            prevItems.map((item) => (item.userId === newItem.userId ? response.data : item))
+          );
+        })
+        .catch(error => {
+          console.error("There was an error updating the item!", error);
+        });
     }
     setNewItem({
-      id: "",
+      userId: "",
       name: "",
       email: "",
       password: "",
+      contact: "",
       address: "",
       type: "",
       companyName: "",
@@ -92,10 +97,11 @@ const UserManagementList = () => {
 
   const handleDiscard = () => {
     setNewItem({
-      id: "",
+      userId: "",
       name: "",
       email: "",
       password: "",
+      contact: "",
       address: "",
       type: "",
       companyName: "",
@@ -106,19 +112,25 @@ const UserManagementList = () => {
 
   const handleEdit = (item) => {
     setNewItem(item);
-    setIsEditing("edit"); // Indicate editing an existing item
+    setIsEditing("edit");
   };
 
-  const handleDelete = (id) => {
-    setInventoryItems((prevItems) =>
-      prevItems.filter((item) => item.id !== id)
-    );
+  const handleDelete = (userId) => {
+    api.delete(`/users/${userId}`)
+      .then(() => {
+        setUserList((prevItems) =>
+          prevItems.filter((item) => item.userId !== userId)
+        );
+      })
+      .catch(error => {
+        console.error("There was an error deleting the item!", error);
+      });
   };
 
   const sortedItems =
     isEditing === "add" || isEditing === "edit"
-      ? [newItem, ...inventoryItems]
-      : inventoryItems;
+      ? [newItem, ...userList]
+      : userList;
 
   return (
     <section className="admin-section">
@@ -136,6 +148,7 @@ const UserManagementList = () => {
               <th>Name</th>
               <th>Email</th>
               <th>Password</th>
+              <th>Contact</th>
               <th>Address</th>
               <th>Type</th>
               <th>CompanyName</th>
@@ -145,12 +158,14 @@ const UserManagementList = () => {
           </thead>
           <tbody>
             {(isEditing === "add" || isEditing === "edit") && (
-              <tr>
-                <td><input 
-                    name="id"
-                    value={newItem.id}
+              <tr key={newItem.userId || 'new-item'}>
+                <td>
+                  <input 
+                    name="userId"
+                    value={newItem.userId}
+                    readOnly={isEditing === "add"} // Make userId readOnly when adding
                     onChange={handleChange}
-                    />
+                  />
                 </td>
                 <td>
                   <input
@@ -170,6 +185,13 @@ const UserManagementList = () => {
                   <input
                     name="password"
                     value={newItem.password}
+                    onChange={handleChange}
+                  />
+                </td>
+                <td>
+                  <input
+                    name="contact"
+                    value={newItem.contact}
                     onChange={handleChange}
                   />
                 </td>
@@ -220,11 +242,12 @@ const UserManagementList = () => {
               </tr>
             )}
             {sortedItems.map((item) => (
-              <tr key={item.id}>
-                <td>{item.id}</td>
+              <tr key={item.userId}>
+                <td>{item.userId}</td>
                 <td>{item.name}</td>
                 <td>{item.email}</td>
                 <td>{item.password}</td>
+                <td>{item.contact}</td>
                 <td>{item.address}</td>
                 <td>{item.type}</td>
                 <td>{item.companyName}</td>
@@ -236,7 +259,7 @@ const UserManagementList = () => {
                   />
                   <button
                     className="admin-inventry-deleteButton"
-                    onClick={() => handleDelete(item.id)}
+                    onClick={() => handleDelete(item.userId)}
                   >
                     Delete
                   </button>

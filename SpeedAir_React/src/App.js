@@ -1,14 +1,24 @@
+import React, { useState, useEffect } from 'react';
 import AdminHome from './AdminHome';
-import './App.css';
 import MainHome from './MainHome';
+import LoginSignup from './components/mainComponents/LoginSignup'; // Import the LoginSignup component
+import { useAuth } from './AuthContext';
 
-function App() {
+const App = () => {
+  const { userType } = useAuth();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    if (userType) {
+      setIsAuthenticated(true);
+    }
+  }, [userType]);
+
   return (
-    <div className="App">
-      {/* <MainHome/> */}
-      <AdminHome/>  
+    <div>
+      {!isAuthenticated ? <LoginSignup /> : (userType === 'admin' ? <AdminHome /> : <MainHome />)}
     </div>
   );
-}
+};
 
 export default App;
