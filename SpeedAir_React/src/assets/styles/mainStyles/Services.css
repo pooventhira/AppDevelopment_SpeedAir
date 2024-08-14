@@ -7,14 +7,14 @@
   box-shadow: 1px 1px 5px 3px var(--color-grey-tint3);
 }
 
-.location {
+.services-location {
   margin-bottom: 2%;
   display: flex;
   text-align: start;
   align-items: center;
   font-size: 1.5em;
 }
-.location select {
+.services-location select {
   font-size: 1em;
   font-family: inherit;
   font-weight: 600;
@@ -23,28 +23,32 @@
   outline: none;
 }
 
-.container {
+.services-container {
   display: flex;
   justify-content: space-around;
   padding: 0% 4%;
 }
-.container div {
+.services-container div {
   width: 13%;
   cursor: pointer;
+  transition: scale 0.5s;
 }
-.container div img {
+.services-container div:hover {
+  scale: 1.07;
+  transition: scale 0.3s;
+}
+.services-container div img {
   width: 100%;
   border-radius: 8%;
   background-color: var(--color-primary-tint4);
 }
-.container p {
-  /* text-align: start; */
+.services-container p {
   margin-top: 8%;
   font-size: 1.5em;
   font-weight: 700;
 }
 
-.container .services-button {
+.services-container .services-button {
   color: var(--color-white);
   background-color: var(--color-primary);
   border-radius: 12px;
@@ -52,16 +56,21 @@
   flex-direction: column;
   justify-content: center;
 }
-.container .services-button h3{
+.services-container .services-button h3{
   /* text-align: start; */
   font-size: 2em;
 }
-.container .services-button p{
+.services-container .services-button p{
   font-size: 1em;
   font-weight: normal;
 }
-.container .services-button span{
+.services-container .services-button span{
   font-size: 2.5em;
+  transition: translate 0.8s;
   text-align: left;
   padding: 0 8%;
+}
+.services-container .services-button:hover span {
+  translate: 30%;
+  transition: translate 0.8s;
 }

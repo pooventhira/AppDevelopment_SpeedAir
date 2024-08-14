@@ -1,9 +1,9 @@
 .sidebar {
-  width: 22%;
+  width: 18%;
   height: 100vh; /* Full height */
-  background-color: var(--color-grey-tint5);
+  background-color: var(--color-grey-tint4);
   padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 0 10px var(--color-grey-tint3);
   font-family: inherit;
   overflow-y: auto; /* Enable vertical scrolling */
   position: fixed; /* Fix the sidebar to the left */

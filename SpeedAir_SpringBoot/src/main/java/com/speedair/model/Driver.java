@@ -1,6 +1,7 @@
 package com.speedair.model;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,17 +22,13 @@ public class Driver {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long driverId;
-    private String name;
-    private String email;
-    private String password;
-    private String contact;
-    private String address;
+    @Column(nullable = false)
     private String aadharNo;
+    @Column(nullable = false)
     private String drivingLicence;
-    private String pickupLocation;
-    private String deliveryLocation;
+    private String salaryDetails;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="vehicle_id")
-    private Vehicle vehicle;
+    @JoinColumn(name = "user_id")
+    private User user;
 }

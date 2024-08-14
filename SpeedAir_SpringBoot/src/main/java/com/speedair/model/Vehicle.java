@@ -1,7 +1,9 @@
 package com.speedair.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,20 +25,23 @@ public class Vehicle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long vehicleId;
+    @Column(nullable = false)
     private String vehicleNo;
+    @Column(nullable = false)
     private String type;
+    @Column(nullable = false)
     private String rtoDetails;
-    private Double petrolCapacity;
+    @Column(nullable = false)
     private String testReport;
+    private Double petrolCapacity;
     private String currentLocation;
     private String status;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="driver_id")
     private Driver driver;
     @ManyToOne
-    // @JoinColumn(name = "shipment_id")
-    @JsonIgnore
+    @JoinColumn(name = "shipment_id", unique = false)
+    @JsonBackReference
     private Shipment shipment;
 }
-

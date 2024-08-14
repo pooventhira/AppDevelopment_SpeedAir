@@ -47,11 +47,7 @@ public class DriverController {
     public ResponseEntity<Driver> updateDriver(@PathVariable Long id, @RequestBody Driver driverDetails) {
         Driver driver = driverService.getDriverById(id);
         if (driver != null) {
-            driver.setName(driverDetails.getName());
-            driver.setEmail(driverDetails.getEmail());
-            driver.setContact(driverDetails.getContact());
-            driver.setPickupLocation(driverDetails.getPickupLocation());
-            driver.setDeliveryLocation(driverDetails.getDeliveryLocation());
+            driver.setSalaryDetails(driverDetails.getSalaryDetails());
             return ResponseEntity.ok(driverService.saveDriver(driver));
         } else {
             return ResponseEntity.notFound().build();

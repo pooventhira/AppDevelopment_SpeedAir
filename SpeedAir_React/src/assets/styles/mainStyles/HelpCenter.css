@@ -8,6 +8,7 @@
   color: var(--color-white);
   padding: 4%;
   font-family: inherit;
+  text-align: center;
 }
 
 .help-center .heading {

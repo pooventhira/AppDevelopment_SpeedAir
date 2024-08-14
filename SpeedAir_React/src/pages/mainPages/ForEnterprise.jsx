@@ -6,14 +6,18 @@ import FrequentlyAskedQuestions from "../../components/mainComponents/Frequently
 import OurServices from "../../components/mainComponents/OurServices";
 import Testimonial from "../../components/mainComponents/Testimonial";
 import OurClients from "../../components/mainComponents/OurClients";
+import OurGrowingNetwork from "../../components/mainComponents/OurGrowingNetwork";
+import EnterpriseLanding from "../../components/mainComponents/EnterpriseLanding";
 
 const ForEnterprise = () => {
   return (
     <main className="for-enterprise">
       <Header/>
+      <EnterpriseLanding/>
       <OurServices/>
-      <Testimonial/>
+      <OurGrowingNetwork/>
       <OurClients/>
+      <Testimonial/>
       <FrequentlyAskedQuestions/>
       <Footer/>
     </main>
