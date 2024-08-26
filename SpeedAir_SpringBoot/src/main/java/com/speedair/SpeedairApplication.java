@@ -39,11 +39,14 @@ public class SpeedairApplication {
 			new Company(null, "company2", "company2@gmail.com", "a", "1234567890", new ArrayList<>())
 			).collect(Collectors.toList());
 		companyRepository.saveAll(companies);
-		List<User> driverUsers = Stream.of(
+		List<User> users = Stream.of(
+			new User(null, "admin1", "admin1@gmail.com", "1234", "1234567890", "a", "admin", "speedair", "a"),
+			new User(null, "user1", "user1@gmail.com", "1234", "1234567890", "a", "user", "speedair", "a"),
+			new User(null, "user2", "user2@gmail.com", "1234", "1234567890", "a", "user", "speedair", "a"),
 			new User(null, "driver1", "driver1@gmail.com", "1234", "1234567890", "a", "driver", "speedair", "a"),
 			new User(null, "driver2", "driver2@gmail.com", "1234", "1234567890", "a", "driver", "speedair", "a")
 		).collect(Collectors.toList());
-		userRepository.saveAll(driverUsers);
+		userRepository.saveAll(users);
 		
 		List<Driver> drivers = Stream.of(
 			new Driver(null, "123409874567", "q234re456y", "a", null),

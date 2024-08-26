@@ -1,0 +1,143 @@
+.vehicles-overview {
+  width: 48%;
+}
+
+.card {
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(245, 245, 245);
+}
+
+.vehicles-overview h3 {
+  margin-bottom: 20px;
+}
+
+.overview-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.progress-bar {
+  display: flex;
+  height: 30px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.progress {
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.on-the-way {
+  width: 39.7%;
+  background-color: #7dbff2;
+}
+
+.unloading {
+  width: 28.3%;
+  background-color: #7d7df2;
+}
+
+.loading {
+  width: 17.4%;
+  background-color: #b87df2;
+}
+
+.waiting {
+  width: 14.6%;
+  background-color: #f27d7d;
+}
+
+.details .detail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.details .detail i {
+  margin-right: 10px;
+  color: #7d7df2;
+}
+
+/* ************************************ */
+
+.shipment-statistics {
+  width: 48%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.month-selector select {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.statistics-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chart {
+  width: 100%;
+  height: 150px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.chart-value {
+  color: var(--color-black);
+  font-weight: 500;
+  font-size: 1.1em;
+}
+
+.legend {
+  display: flex;
+  justify-content: center;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.legend-color.shipment {
+  background-color: #ffc107;
+}
+
+.legend-color.delivery {
+  background-color: #7dbff2;
+}

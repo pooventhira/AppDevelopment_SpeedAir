@@ -1,0 +1,71 @@
+.dashboard-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 22%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  font-size: 24px;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.purple {
+  background-color: #e0e0ff;
+  color: #7d7df2;
+}
+
+.yellow {
+  background-color: #fff5e0;
+  color: #f2b179;
+}
+
+.red {
+  background-color: #ffe0e0;
+  color: #f27d7d;
+}
+
+.blue {
+  background-color: #e0f0ff;
+  color: #7dbff2;
+}
+
+.card-content h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.card-content p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #666;
+}
+
+.percentage {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.percentage.positive {
+  color: #4caf50;
+}
+
+.percentage.negative {
+  color: #f44336;
+}

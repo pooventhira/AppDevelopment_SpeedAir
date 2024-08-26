@@ -1,4 +1,10 @@
 .admin-section {
-  padding-top: 6%;
-  padding-left: 18%;
+  padding-top: 7%;
+  padding-left: 18.5%;
+}
+
+.admin-section1 {
+  padding: 20px 20px 20px calc(18.5% + 20px);
+  display: flex;
+  justify-content: space-between;
 }
