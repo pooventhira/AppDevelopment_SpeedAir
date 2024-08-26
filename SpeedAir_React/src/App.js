@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import AdminHome from './AdminHome';
 import MainHome from './MainHome';
 import LoginSignup from './components/mainComponents/LoginSignup'; // Import the LoginSignup component
-import { useAuth } from './AuthContext';
+// import { useAuth } from './AuthContext';
 
 const App = () => {
   const userType = "admin"
