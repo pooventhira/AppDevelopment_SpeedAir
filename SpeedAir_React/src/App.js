@@ -5,8 +5,10 @@ import LoginSignup from './components/mainComponents/LoginSignup'; // Import the
 import { useAuth } from './AuthContext';
 
 const App = () => {
-  const { userType } = useAuth();
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const userType = "admin"
+
+  // const { userType } = useAuth();
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
 
   useEffect(() => {
     if (userType) {
