@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 import com.speedair.model.Billing;
 import com.speedair.model.Company;
 import com.speedair.model.Shipment;
-import com.speedair.model.User;
+import com.speedair.model.Employee;
 import com.speedair.repository.CompanyRepository;
 import com.speedair.repository.ShipmentRepository;
-import com.speedair.repository.UserRepository;
+import com.speedair.repository.EmployeeRepository;
 
 @Service
 public class ShipmentService {
@@ -22,7 +22,7 @@ public class ShipmentService {
     @Autowired
     private CompanyRepository companyRepository;
     @Autowired
-    private UserRepository userRepository;
+    private EmployeeRepository employeeRepository;
     
     // GetAll
     public List<Shipment> getAllShipments() {
@@ -48,8 +48,8 @@ public class ShipmentService {
     }
     
     // ShipmentUserMapping Function
-    private User shipmentSenderMapper(String email) {
-        return userRepository.findByEmail(email);
+    private Employee shipmentSenderMapper(String email) {
+        return employeeRepository.findByEmail(email);
     }
     // ShipmentCompanyMapping Function
     private Company shipmentCompanyMapper(String companyName) {

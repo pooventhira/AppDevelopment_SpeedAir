@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../../components/mainComponents/Header1";
-import LoginSignup from "../../components/mainComponents/LoginSignup";
+import LoginSignup from "../../components/Login";
 
 const Authentication = () => {
   return(

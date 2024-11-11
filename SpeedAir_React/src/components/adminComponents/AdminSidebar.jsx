@@ -7,28 +7,28 @@ const AdminSidebar = () => {
 
   const navigate = useNavigate();
   const adminDashboard = () => {
-    navigate('/');
+    navigate('/admin');
   }
   const adminOrderManagement = () => {
-    navigate('/order-management');
+    navigate('/admin/order-management');
   }
   const adminShipmentTracking = () => {
-    navigate('/shipment-tracking');
+    navigate('/admin/shipment-tracking');
   }
   const adminInventoryManagement = () => {
-    navigate('/inventry-management');
+    navigate('/admin/inventry-management');
   }
   const adminFleetManagement = () => {
-    navigate('/fleet-management');
+    navigate('/admin/fleet-management');
   }
   const adminSupplierManagement = () => {
-    navigate('/suplier-management');
+    navigate('/admin/suplier-management');
   }
-  const adminUserManagement = () => {
-    navigate('/user-management');
+  const adminEmployeeManagement = () => {
+    navigate('/admin/employee-management');
   }
   const adminBillingInvoicing = () => {
-    navigate('/billing-invoice');
+    navigate('/admin/billing-invoice');
   }
 
   return (
@@ -58,13 +58,13 @@ const AdminSidebar = () => {
         <FaBuilding />
         <span>Supplier Management</span>
       </div>
+      <div className="menu-item" onClick={adminEmployeeManagement}>
+        <FaUserShield />
+        <span>Employee Management</span>
+      </div>
       <div className="menu-item" onClick={adminBillingInvoicing}>
         <FaFileInvoiceDollar />
         <span>Billing & Invoicing</span>
-      </div>
-      <div className="menu-item" onClick={adminUserManagement}>
-        <FaUserShield />
-        <span>User Management</span>
       </div>
     </div>
   );

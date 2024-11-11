@@ -48,7 +48,7 @@ public class Shipment {
     private Billing bill;
     @OneToOne
     @JoinColumn(name = "sender_id")
-    private User sender;
+    private Employee sender;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "receiver_id")
     private Customer receiver;

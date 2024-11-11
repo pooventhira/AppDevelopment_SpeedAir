@@ -6,15 +6,20 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.speedair.model.Company;
 import com.speedair.model.Driver;
+import com.speedair.model.Employee;
 import com.speedair.model.User;
 import com.speedair.model.Vehicle;
 import com.speedair.repository.CompanyRepository;
 import com.speedair.repository.DriverRepository;
+import com.speedair.repository.EmployeeRepository;
 import com.speedair.repository.UserRepository;
 import com.speedair.repository.VehicleRepository;
 
@@ -24,7 +29,7 @@ import jakarta.annotation.PostConstruct;
 public class SpeedairApplication {
 
 	@Autowired
-	private UserRepository userRepository;
+	private EmployeeRepository employeeRepository;
 	@Autowired
 	private CompanyRepository companyRepository;
 	@Autowired
@@ -39,11 +44,12 @@ public class SpeedairApplication {
 			new Company(null, "company2", "company2@gmail.com", "a", "1234567890", new ArrayList<>())
 			).collect(Collectors.toList());
 		companyRepository.saveAll(companies);
-		List<User> driverUsers = Stream.of(
-			new User(null, "driver1", "driver1@gmail.com", "1234", "1234567890", "a", "driver", "speedair", "a"),
-			new User(null, "driver2", "driver2@gmail.com", "1234", "1234567890", "a", "driver", "speedair", "a")
+
+		List<Employee> employees = Stream.of(
+			new Employee(null, "employee", "employee@gmail.com", "employee", "1234567890", "a", "employee", "speedair", "a"),
+			new Employee(null, "admin", "admin@gmail.com", "admin", "1234567890", "a", "admin", "speedair", "a")
 		).collect(Collectors.toList());
-		userRepository.saveAll(driverUsers);
+		employeeRepository.saveAll(employees);
 		
 		List<Driver> drivers = Stream.of(
 			new Driver(null, "123409874567", "q234re456y", "a", null),
@@ -58,6 +64,23 @@ public class SpeedairApplication {
 		vehicleRepository.saveAll(vehicles);
 	}
 	
+	@Bean
+  public CommandLineRunner loadData(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+    return args -> {
+			if (!userRepository.existsByUsername("user")) {
+        User user = new User();
+        user.setUsername("user");
+        user.setPassword(passwordEncoder.encode("user"));
+        userRepository.save(user);
+    	}
+			if (!userRepository.existsByUsername("admin")) {
+        User user = new User();
+        user.setUsername("admin");
+        user.setPassword(passwordEncoder.encode("admin"));
+        userRepository.save(user);
+    	}
+    };
+  }
 	
 	public static void main(String[] args) {
 		SpringApplication.run(SpeedairApplication.class, args);

@@ -1,18 +1,18 @@
 import React from 'react';
-import './AdminUserManagement.css';
+import './AdminEmployeeManagement.css';
 import AdminSidebar from '../../components/adminComponents/AdminSidebar';
 import AdminNavbar from '../../components/adminComponents/AdminNavbar';
-import UserManagementList from '../../components/adminComponents/UserManagementList';
+import EmployeeManagementList from '../../components/adminComponents/EmployeeManagementList';
 
 
-const AdminUserManagement = () => {
+const AdminEmployeeManagement = () => {
   return (
     <main>
       <AdminSidebar/>
       <AdminNavbar/>
-      <UserManagementList/>
+      <EmployeeManagementList/>
     </main>
   );
 };
 
-export default AdminUserManagement;
+export default AdminEmployeeManagement;

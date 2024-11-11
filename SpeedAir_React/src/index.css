@@ -47,3 +47,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.admin-section {
+  padding-top: 6%;
+  padding-left: 18%;
+}
